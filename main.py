@@ -27,6 +27,7 @@ DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sun
 SEED = 1 # seed to assign the same vehicles to couriers at each run
 
 COLLECTION = "COLLECTION"
+collection = "collection"
 
 instances_dir="./instances/{}/".format(collection)
 bench_dir="./benchmarks/{}".format(COLLECTION)
