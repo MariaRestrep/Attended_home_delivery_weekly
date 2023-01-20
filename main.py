@@ -697,7 +697,7 @@ def execute_arguments(args):
         run_bac(args, grammar_graph, timeout, epsilon_tolerance, obj_tolerance, abs_obj_tolerance, current_bench_dir)
 
     if not args.no_exp:
-        data_file=current_bench_dir+"results_"+str(args.instance_number)+".txt"
+        data_file=current_bench_dir+"results_"+str(args.instance_number)+"_"+str(args.minsl)+"_"+str(args.maxsl)+"_"+str(args.shiftgap)+".txt"
 
         print("exporting!!!!!!!!!", data_file)
         export_data_string(data_file, data_list)
@@ -861,10 +861,13 @@ if __name__ == "__main__":
 
     # WEEKLY WORKING RULES TO CONSIDER
     #todo: Check this because the values are different when checking if a tour is feasible or not
+
+    min_shift_length = args.minsl
+    max_shift_length = args.maxsl
+    SHIFT_GAP = args.shiftgap
+
     if args.full_patterns or args.price_patterns:
-        min_shift_length = args.minsl
-        max_shift_length = args.maxsl
-        SHIFT_GAP = args.shiftgap
+
         AVAILABILITIES_DURATION = [NB_TIME_PERIODS]
         FULL_AVAILABILITY=True
         MIN_WORKING_HOURS = args.mintl
