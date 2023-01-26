@@ -66,7 +66,7 @@ srun python main.py %s %s %s --full_patterns -t 7200  -minsl %s -maxsl %s -shift
 
 if __name__ == "__main__":
 
-    Packages = [100, 200]
+    Packages = [50, 100, 200]
     #Packages = [50, 100, 200]
 
     Distribution = ["-u", "-n"]
