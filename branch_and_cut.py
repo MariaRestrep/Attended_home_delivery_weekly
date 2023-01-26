@@ -618,7 +618,7 @@ def solve_bac(param, grammar_graph, grammar, log_output=False, timeout=1800, obj
 
     problem.set_time_limit(timeout)
     ti.start_branch_and_cut()
-    problem.solve(log_output=False)
+    problem.solve(log_output=True)
     ti.end_branch_and_cut()
     ti.end_resolution()
 

@@ -24,7 +24,7 @@ def CreatHeaderNantes(file, filename):
 #SBATCH --mem 10000
 #
 # Temps de presence du job
-#SBATCH --time=2:00:00
+#SBATCH --time=5:00:00
 #
 # Adresse mel de l'utilisateur
 #
@@ -66,9 +66,11 @@ srun python main.py %s %s %s --full_patterns -t 7200  -minsl %s -maxsl %s -shift
 
 if __name__ == "__main__":
 
-    Packages = [50, 100, 200]
+    Packages = [100, 200]
+    #Packages = [50, 100, 200]
 
     Distribution = ["-u", "-n"]
+    #Distribution = ["-n"]
 
     ShiftConf = [[6, 10, 1], [6, 10, 2], [6, 10, 4], [4, 8, 2], [8, 8, 2]]
 
@@ -96,3 +98,4 @@ if __name__ == "__main__":
                         elif p == 50:
                             jobname = CreateJob(p, d, v, shiftC[0], shiftC[1], shiftC[2])
                             filenew.write("sbatch %s \n" % (jobname))
+                        index+=1
